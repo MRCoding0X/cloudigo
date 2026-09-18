@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f7f8;
+  --foreground: #16161a;
+  --surface: #ffffff;
+  --surface-muted: #f1f1f4;
+  --border: #e2e2e7;
+  --muted: #6b6b76;
+
+  /* Fallbacks — normally overridden per-request from admin-configured
+     settings (Settings > Appearance), see app/layout.tsx. */
+  --brand-accent: #4f46e5;
+  --brand-accent-secondary: #111827;
+  --brand-accent-soft: color-mix(in srgb, var(--brand-accent) 12%, var(--surface));
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand-accent);
+  --color-brand-secondary: var(--brand-accent-secondary);
+  --color-brand-soft: var(--brand-accent-soft);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(2%, -4%) scale(1.05);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0b0d;
+    --foreground: #f0f0f2;
+    --surface: #17171b;
+    --surface-muted: #1f1f24;
+    --border: #2b2b31;
+    --muted: #93939e;
+    --brand-accent-soft: color-mix(in srgb, var(--brand-accent) 18%, var(--surface));
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 60% 50% at 15% -10%, color-mix(in srgb, var(--brand-accent) 16%, transparent), transparent),
+    radial-gradient(ellipse 50% 40% at 100% 0%, color-mix(in srgb, var(--brand-accent) 10%, transparent), transparent);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+button,
+a {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::selection {
+  background: var(--brand-accent-soft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
