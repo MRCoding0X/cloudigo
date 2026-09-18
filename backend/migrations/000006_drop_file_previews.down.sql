@@ -1,0 +1,1 @@
+ALTER TABLE uploads ADD COLUMN file_previews BOOLEAN NOT NULL DEFAULT false;

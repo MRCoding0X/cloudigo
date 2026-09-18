@@ -1,0 +1,1 @@
+ALTER TABLE uploads DROP COLUMN IF EXISTS share_code;

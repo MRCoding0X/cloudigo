@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS email_verifications;
+DROP TABLE IF EXISTS downloads;
+DROP TABLE IF EXISTS receivers;
+DROP TABLE IF EXISTS files;
+DROP TABLE IF EXISTS uploads;
+DROP TABLE IF EXISTS email_templates;
+DROP TABLE IF EXISTS backgrounds;
+DROP TABLE IF EXISTS pages;
+DROP TABLE IF EXISTS social_links;
+DROP TABLE IF EXISTS settings;
+DROP TABLE IF EXISTS refresh_tokens;
+DROP TABLE IF EXISTS users;
