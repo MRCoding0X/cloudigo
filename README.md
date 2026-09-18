@@ -51,3 +51,6 @@ SMTP is configured from the admin panel (Settings → Mail), not environment var
 4. **Back up the `cloudigo_storage` volume** - every uploaded file, background image, and the audit log live there - along with `cloudigo_pg_data` for the database itself.
 
 Once that's sorted, deploys are just: build new images, `docker compose up -d --build`, migrations run automatically on backend startup.
+
+
+If you have requests for new features or improvements, I continuously develop and am happy to add functionality.
